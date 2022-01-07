@@ -1,1 +1,27 @@
-x
+ProductList.js
+...................................
+/* addtoCart alert*/
+    addtoCart=(product)=>{
+        alert(product.productName)
+    /* addtoCart alert*/
+    
+    
+     {/*ProductList Map*/}
+                        {
+
+                            this.props.products.map(product => (
+                                <tr key={product.id}>
+                                    <th scope="row">{product.id}</th>
+                                    <td>{product.productName}</td>
+                                    <td>{product.unitPrice}</td>
+                                    <td>{product.quantityPerUnit}</td>
+                                    <td>{product.unitsInStock}</td>
+                                    {/*Add to Cart*/}
+                                    <td><Button  onClick={()=>this.addtoCart(product)}     color="info">Add</Button></td>
+                                    
+
+                                </tr>
+
+                            ))
+                        }
+                           {/*ProductList Map*/}
