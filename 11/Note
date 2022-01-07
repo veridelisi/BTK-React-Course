@@ -1,0 +1,21 @@
+CategoryList.js
+......................................
+<ListGroup>
+                
+                    {
+                        //CategoryList Items with Map
+                        this.state.categories.map(category => (
+                            <ListGroupItem
+                                //CategoryList Items with IF Statement
+                                active={category.categoryName===this.props.currentCategory?true:false}
+                                key={category.id}
+                                onClick={() => this.props.changeCategory(category)}>
+
+                                {category.categoryName}
+
+                            </ListGroupItem>
+                        ))
+                         //CategoryList Items with Map
+                    }
+
+                </ListGroup>
