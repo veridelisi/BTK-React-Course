@@ -1,0 +1,35 @@
+CategoryList.js
+........................................................................
+/* CategoryList DataBase*/
+    state = {
+        categories: []
+            }
+
+    componentDidMount(){
+        this.getCategories()
+    }
+
+    getCategories = () => {
+        fetch("http://localhost:3000/categories")
+            .then(response => response.json())
+            .then(response => this.setState({ categories: response }))
+    }
+    
+    
+    <ListGroup>
+                
+                    {
+                        //CategoryList Items with Map
+                        this.state.categories.map(category => (
+                            <ListGroupItem
+                                key={category.id}
+                                onClick={() => this.props.changeCategory(category)}>
+
+                                {category.categoryName}
+
+                            </ListGroupItem>
+                        ))
+                    }
+
+                </ListGroup>
+                
