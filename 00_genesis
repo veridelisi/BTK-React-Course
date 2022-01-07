@@ -1,8 +1,8 @@
 //in your home directory
 
-npx create-react-app my-app
+npx create-react-app reactcourse
 
-cd my-app
+cd reactcourse
 
 npm start
 
