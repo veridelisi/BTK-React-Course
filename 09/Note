@@ -1,0 +1,43 @@
+App.js
+...........................................
+ /* currentCategory and products list*/
+  state = { currentCategory: "" , products:[]}
+
+    /* products */
+
+    componentDidMount(){
+      this.getProducts()
+                       }
+
+  getProducts = () => {
+    fetch("http://localhost:3000/products")
+        .then(response => response.json())
+        .then(response => this.setState({ products: response }))
+    /* products */
+}
+
+ <Col xs="9">
+              {/*ProductList Props */}
+              <ProductList 
+              products={this.state.products}
+              currentCategory={this.state.currentCategory}
+              info={productInfo}>
+              </ProductList></Col>
+              
+             
+ ProductList.js
+ ...........................................
+ {
+                            this.props.products.map(product => (
+                                <tr key={product.id}>
+                                    <th scope="row">{product.id}</th>
+                                    <td>{product.productName}</td>
+                                    <td>{product.unitPrice}</td>
+                                    <td>{product.quantityPerUnit}</td>
+                                    <td>{product.unitsInStock}</td>
+                                    
+
+                                </tr>
+
+                            ))
+                        }
