@@ -1,0 +1,36 @@
+App.js
+....................................
+/* removeFromCart : product data come from ProductList
+when you click the "x", product.id===product.id
+               */
+    removeFromCart=(product)=>{
+    let newCart=this.state.cart.filter(c=>c.product.id!==product.id)
+    this.setState({cart:newCart})
+/* removeFromCart : product data come from ProductList
+when you click the "x", product.id===product.id           */
+
+ <Navi   removeFromCart={this.removeFromCart} cart={this.state.cart}   ></Navi>
+ 
+ 
+ Navi.js
+ ...........................................................
+
+         {/*cart props and remove function*/}
+        <CartSummary removeFromCart={this.props.removeFromCart} cart={this.props.cart}></CartSummary>
+        
+ CartSummary.js
+ ............................................................
+ {/*Listing Removing Adding Products*/}
+                    {
+                        this.props.cart.map(cartItem => (
+                            <DropdownItem key={cartItem.product.id}>
+                    <Badge  color="danger"  onClick={()=>this.props.removeFromCart(cartItem.product)}>x</Badge>
+                                {cartItem.product.productName} -
+                                <Badge color="success">{cartItem.quantity}</Badge>
+          
+                            </DropdownItem>
+
+                        ))
+                    }
+                    {/*Listing Removing Adding Products*/}
+      
