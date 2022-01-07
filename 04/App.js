@@ -19,7 +19,7 @@ export default class App extends Component {
           </Row>
 
           <Row>
-          //newLine
+         
             <Col xs="3" ><CategoryList title={titleCategory}></CategoryList></Col>
             <Col xs="9"><ProductList  title={titleProduct}></ProductList></Col>
 
