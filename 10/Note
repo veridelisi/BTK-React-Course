@@ -1,1 +1,69 @@
+App.js
+...........................................
+  /* currentCategory and products list and get products*/
+  state = { currentCategory: "" , products:[]}
 
+  changeCategory = category => {
+    this.setState({ currentCategory: category.categoryName })
+    /* CategoryList sends the category database, we choose category.id
+    and send it to the getProducts*/
+    this.getProducts(category.id)
+  }
+  /* currentCategory and products list and get products*/
+
+
+    /* Get products and category.id and send to the products state 
+    category.id===product.categoryID*/
+
+    componentDidMount(){
+      this.getProducts()
+                       }
+
+  getProducts = (categoryId) => {
+    let url="http://localhost:3000/products";
+    if(categoryId){
+      url += "?categoryId=" +categoryId;
+    }
+    fetch(url)
+        .then(response => response.json())
+        .then(response => this.setState({ products: response }))
+    /* Get products and send to the products state */
+}
+              
+             
+ ProductList.js
+ ...........................................
+ {/*ProductList Map*/}
+                        {
+
+                            this.props.products.map(product => (
+                                <tr key={product.id}>
+                                    <th scope="row">{product.id}</th>
+                                    <td>{product.productName}</td>
+                                    <td>{product.unitPrice}</td>
+                                    <td>{product.quantityPerUnit}</td>
+                                    <td>{product.unitsInStock}</td>
+                                    
+
+                                </tr>
+
+                            ))
+                        }
+  {/*ProductList Map*/}
+  
+  
+  
+  CategoryList.js
+  ...........................................
+  {
+                        //CategoryList Items with Map
+                        this.state.categories.map(category => (
+                            <ListGroupItem
+                                key={category.id}
+                                onClick={() => this.props.changeCategory(category)}>
+
+                                {category.categoryName}
+
+                            </ListGroupItem>
+                        ))
+                    }
