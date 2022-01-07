@@ -1,0 +1,49 @@
+App.js
+...............................
+state = { currentCategory: "" }
+
+  
+changeCategory = category => {
+
+    this.setState({ currentCategory: category.categoryName })
+  }
+  
+  
+  <Row>
+           
+            <Col xs="3">
+             
+              <CategoryList
+                currentCategory={this.state.currentCategory}
+                changeCategory={this.changeCategory}
+                info={categoryInfo}>
+              </CategoryList>
+            </Col>
+
+
+          <Col xs="9">
+              <ProductList 
+              currentCategory={this.state.currentCategory}
+              info={productInfo}>
+              </ProductList></Col>
+
+ </Row>
+  
+  
+CategoryList.js
+.....................................
+                <ListGroup>
+                    {
+                      this.state.categories.map(category=>(
+                     <ListGroupItem 
+                     onClick={()=>this.props.changeCategory(category)}
+                     key={category.categoryId}> 
+                     {category.categoryName} 
+                     </ListGroupItem>
+                      ))  
+                    }
+
+                </ListGroup>
+                
+                
+                  <h4>{this.props.currentCategory}</h4>
