@@ -1,0 +1,12 @@
+npm install json-server
+
+create api folder in your home
+cd api
+save "db.json" file to the  api folder
+json-server --watch db.json
+
+And turn my-app folder
+npm start
+
+use 3001 port from my-app
+use 3000 port from api
