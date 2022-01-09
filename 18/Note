@@ -1,0 +1,17 @@
+Router
+
+index.js
+......................................
+import {BrowserRouter} from "react-router-dom"
+
+
+
+ReactDOM.render(
+ <BrowserRouter><App /></BrowserRouter>,
+  document.getElementById('root')
+);
+
+
+App.js
+...............................................
+import {Switch, Route} from "react-router-dom"
