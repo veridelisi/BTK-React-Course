@@ -15,3 +15,40 @@ ReactDOM.render(
 App.js
 ...............................................
 import {Switch, Route} from "react-router-dom"
+
+{/*Route and switch*/}
+            <Col xs="9">
+
+            <Switch>
+            <Route  exact path="/"  render={props=>(
+               
+              <ProductList 
+              {...props}
+              addToCart={this.addToCart}
+              products={this.state.products}
+              currentCategory={this.state.currentCategory}
+              info={productInfo}
+              />
+            )
+
+
+            } />
+
+
+            <Route   exact path="/cart"   render={props=>(
+               
+               <CartList 
+               {...props}
+               removeFromCart={this.removeFromCart}
+               cart={this.state.cart}
+               />
+             )
+ 
+
+             }/>
+
+
+
+            <Route     component={NotFound}></Route>
+            </Switch>
+
