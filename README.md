@@ -1,4 +1,4 @@
-# basicreact
+# BasicReact
 Basic React Course
 <br>
 <p>This course is categorized summary of the 
