@@ -6,7 +6,7 @@ cd reactcourse
 
 npm start
 
-You need to change index.html page in public folder as follow.
+You need to change index.html page in "public" folder as follow.
 
 
 <!DOCTYPE html>
