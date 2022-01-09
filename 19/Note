@@ -1,0 +1,42 @@
+http://localhost:3001/cart is CartList.js
+
+Click the option when you add the products, you see "go to cart"
+
+App.js
+..............................
+import CartList from "./CartList"
+
+ <Route   exact path="/cart"   render={props=>(
+               
+               <CartList 
+               {...props}
+               removeFromCart={this.removeFromCart}
+               cart={this.state.cart}
+               />
+             )
+ 
+
+ }/>
+ 
+ CartList .js
+ ............................................
+ {
+
+                this.props.cart.map(cartItem=>(
+                  <tr key={cartItem.product.id}>
+                  <td>{cartItem.product.id}</td>
+                   <td>{cartItem.product.categoryId}</td>
+                   <td>{cartItem.product.productName}</td>
+                   <td>{cartItem.product.unitPrice}</td>
+                   <td>{cartItem.product.unitsInStock}</td>
+                   <td>{cartItem.quantity}</td>
+                   <td>
+                    <Button color="danger"
+                    onClick={() => this.props.removeFromCart(cartItem.product)}>Remove</Button>
+                                     </td>
+
+                  </tr>
+
+                ))
+
+              }
