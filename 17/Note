@@ -1,1 +1,26 @@
 npm install alertifyjs --save
+
+
+index.js
+...................................
+import "alertifyjs/build/css/alertify.min.css"
+
+App.js
+.......................................
+addToCart=(product)=>{
+  let newCart=this.state.cart
+  var addedItem=newCart.find(c=>c.product.id===product.id)
+  if(addedItem){
+    addedItem.quantity +=1
+  }
+  else{
+    newCart.push({product:product, quantity:1})
+      }
+  
+  this.setState({cart:newCart}) 
+  alertify.success(product.productName +"added to cart")
+                      }
+/* addToCart : product data come from ProductList
+               newCart add product to product 
+               newCart add 1 to quantity
+               alertify*/
