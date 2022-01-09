@@ -2,7 +2,7 @@
 Basic React Course
 <br>
 <p>This course is categorized summary of the React Course 
-  <a href=""https://www.btkakademi.gov.tr/portal/course/player/deliver/react-ile-web-programciligi-10035">BTK React Course </a>
+  <a href="https://www.btkakademi.gov.tr/portal/course/player/deliver/react-ile-web-programciligi-10035">BTK React Course </a>
 (07-19 lessons)</p>
 <br>
 
